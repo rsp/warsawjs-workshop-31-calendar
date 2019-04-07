@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/rsp/warsawjs-workshop-31-calendar#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mz": "^2.7.0",
+    "uuid": "^3.3.2"
   }
 }
