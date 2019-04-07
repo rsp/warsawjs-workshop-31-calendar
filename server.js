@@ -3,6 +3,15 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const fs2 = require('mz/fs');
 const uuid = require('uuid');
+const redisDriver = require('promise-redis');
+const tryjson = require('tryjson');
+
+const uri = process.env.REDIS_URL;
+const redis = redisDriver().createClient(uri);
+
+redis.on('ready', async () => {
+  console.log('Redis ready');
+});
 
 const app = express();
 
@@ -37,6 +46,22 @@ app.listen(port, () => {
 app.use(bodyParser.json());
 
 const data = {};
+
+app.get('/redis/:id', async (req, res) => {
+  const id = req.params.id;
+  const data = tryjson.parse(await redis.get(id));
+  res.json({ data });
+});
+
+app.put('/redis/:id', async (req, res) => {
+  const id = req.params.id;
+  const data = req.body;
+  await redis.set(id, tryjson.stringify(data));
+  res.json({ ok: true });
+});
+
+
+
 
 app.get('/file', (req, res) => {
   fs.readFile('file.txt', 'utf-8', (err, data) => {
