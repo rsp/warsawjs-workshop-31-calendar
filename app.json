@@ -1,6 +1,6 @@
 {
   "name": "warsawjs-31",
-  "description": "",
+  "description": "warsawjs workshop app",
   "repository": "",
   "website": "",
   "image": "heroku/node"
