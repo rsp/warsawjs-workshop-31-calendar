@@ -1,0 +1,23 @@
+{
+  "name": "warsawjs-workshop-31-calendar",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsp/warsawjs-workshop-31-calendar.git"
+  },
+  "keywords": [],
+  "author": "Rafał Pocztarski <r.pocztarski@gmail.com> (http://pocztarski.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsp/warsawjs-workshop-31-calendar/issues"
+  },
+  "homepage": "https://github.com/rsp/warsawjs-workshop-31-calendar#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
